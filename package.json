@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8085",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "naive-ui": "^2.34.3",
     "sass-loader": "^13.2.2",
+    "unplugin-auto-import": "^0.15.3",
     "vue": "^3.2.47"
   },
   "devDependencies": {
