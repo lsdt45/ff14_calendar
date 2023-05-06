@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "naive-ui": "^2.34.3",
+    "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "unplugin-auto-import": "^0.15.3",
     "vue": "^3.2.47"

@@ -3,20 +3,44 @@
 <template>
 	<div class="Calendar__wrapper">
 		<!-- <n-button>naive-ui</n-button> -->
-		<n-calendar v-model:value="value" #="{ year, month, date }" @update:value="handleUpdateValue">
-      {{ year }}-{{ month }}-{{ date }}
-    </n-calendar>
+		<n-calendar v-model:value="value" @update:value="handleUpdateValue">
+			<template #default="{ year, month, date }">
+				<div class="calendar-cell">
+          {{ activeName(new Date(`${year}-${month}-${date}`)) }}
+        </div>
+			</template>
+		</n-calendar>
 	</div>
 </template>
 
 <script setup lang="ts">
 	import { NCalendar } from 'naive-ui'
 	let value = ref()
+	let startDate = ref<Date>(new Date('2023-5-8'))
 
+  let activeName = computed(() => {
+    return (date: Date) => {
+      return isActiveDate(date) ? '班': ''
+    }
+  })
+  
 	function handleUpdateValue(_: number, { year, month, date }: { year: number; month: number; date: number }) {
 		console.log(year, month, date)
-		// value.value = v
+	}
+
+	// 定义一个判断日期是否符合条件的方法
+	function isActiveDate(date: Date): boolean {
+		// 计算起始日期和传入日期之间的差值（以毫秒为单位）
+		let diff: number = Math.abs(date.getTime() - startDate.value.getTime())
+		// 将差值转换为天数
+		let diffDays: number = Math.ceil(diff / (1000 * 3600 * 24))
+		return date.getTime() >= startDate.value.getTime() && diffDays % 4 < 2
 	}
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.n-calendar-dates {
+  grid-template-columns: repeat(7, 100px) !important;
+}
+
+</style>
