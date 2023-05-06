@@ -11,4 +11,5 @@ export default defineConfig({
 			/* options */ imports: ['vue', 'vue-router'],
 		}),
 	],
+	base: './',
 })

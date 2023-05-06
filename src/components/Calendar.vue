@@ -6,8 +6,8 @@
 		<n-calendar v-model:value="value" @update:value="handleUpdateValue">
 			<template #default="{ year, month, date }">
 				<div class="calendar-cell">
-          {{ activeName(new Date(`${year}-${month}-${date}`)) }}
-        </div>
+					{{ activeName(new Date(`${year}-${month}-${date}`)) }}
+				</div>
 			</template>
 		</n-calendar>
 	</div>
@@ -17,13 +17,13 @@
 	import { NCalendar } from 'naive-ui'
 	let value = ref()
 	let startDate = ref<Date>(new Date('2023-5-8'))
+	let endDate = ref<Date>(new Date('2023-6-5'))
+	let activeName = computed(() => {
+		return (date: Date) => {
+			return isActiveDate(date) ? '班' : ''
+		}
+	})
 
-  let activeName = computed(() => {
-    return (date: Date) => {
-      return isActiveDate(date) ? '班': ''
-    }
-  })
-  
 	function handleUpdateValue(_: number, { year, month, date }: { year: number; month: number; date: number }) {
 		console.log(year, month, date)
 	}
@@ -34,13 +34,14 @@
 		let diff: number = Math.abs(date.getTime() - startDate.value.getTime())
 		// 将差值转换为天数
 		let diffDays: number = Math.ceil(diff / (1000 * 3600 * 24))
-		return date.getTime() >= startDate.value.getTime() && diffDays % 4 < 2
+		// 大于等于起始日期，小于终止日期，并且差值取余4小于2的日期为班
+		return date.getTime() >= startDate.value.getTime() && date.getTime() <= endDate.value.getTime() && diffDays % 4 < 2
+		// return date.getTime() >= startDate.value.getTime() && diffDays % 4 < 2
 	}
 </script>
 
 <style lang="scss">
-.n-calendar-dates {
-  grid-template-columns: repeat(7, 100px) !important;
-}
-
+	.n-calendar-dates {
+		grid-template-columns: repeat(7, 100px) !important;
+	}
 </style>
