@@ -19,7 +19,7 @@
 	// 开始日期
 	let startDate = ref<Date>(new Date('2023-04-10'))
 	// 结束日期
-	let endDate = ref<Date>(new Date('2023-06-05'))
+	let endDate = ref<Date>(new Date('2023-6-5'))
 	// 额外的日期
 	let extraDate = ['2023-04-07', '2023-04-21']
 	
@@ -32,7 +32,8 @@
 	// 判断是否为结束日期
 	let isEndDate = computed(() => {
 		return (date: Date) => {
-			return date.getTime() === endDate.value.getTime()
+			console.log(date.getTime(), endDate.value.getTime());
+			return date.getTime() == endDate.value.getTime()
 		}
 	})
 	function handleUpdateValue(_: number, { year, month, date }: { year: number; month: number; date: number }) {
