@@ -13,7 +13,7 @@
 
   let totalTime = ref('')
   
-	const summary: DataTableCreateSummary = (pageData) => {
+	const summary: DataTableCreateSummary = () => {
 		return {
 			date: {
 				value: h('span', { style: { color: 'red' } }, `总计：${totalTime.value}`),
