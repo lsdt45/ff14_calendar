@@ -108,6 +108,18 @@ export let calendarData: CalendarData[] = [
 		duration: '02:30',
 		remark: '',
 	},
+	{
+		date: '2023-05-08',
+		lastStage: 'P5二运',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-09',
+		lastStage: 'P5二运',
+		duration: '01:30',
+		remark: '',
+	},
 ]
 
 export let columns = [

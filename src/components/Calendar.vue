@@ -32,7 +32,6 @@
 	// 判断是否为结束日期
 	let isEndDate = computed(() => {
 		return (date: Date) => {
-			console.log(date.getTime(), endDate.value.getTime());
 			return date.getTime() == endDate.value.getTime()
 		}
 	})

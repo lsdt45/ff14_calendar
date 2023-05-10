@@ -2,7 +2,7 @@
 
 <template>
 	<div class="overview-table__wrapper">
-		<n-data-table :columns="columns" :data="calendarData" size="large" :summary="summary"></n-data-table>
+		<n-data-table class="data-table"  :columns="columns" :data="calendarData" size="large" :summary="summary" flex-height></n-data-table>
 	</div>
 </template>
 
@@ -37,4 +37,8 @@
 	})
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.data-table {
+	height: 70vh;
+}
+</style>
