@@ -1,24 +1,15 @@
+<!-- @format -->
+
 <script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-import Calendar from './components/Calendar.vue';
+	import Main from '@/views/Main.vue'
+	import { NConfigProvider } from 'naive-ui'
+	import { zhCN, dateZhCN } from 'naive-ui'
 </script>
 
 <template>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <Calendar />
+	<n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+		<Main />
+	</n-config-provider>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>
