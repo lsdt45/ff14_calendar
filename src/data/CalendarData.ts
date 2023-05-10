@@ -50,7 +50,7 @@ export let calendarData: CalendarData[] = [
 	},
 	{
 		date: '2023-04-19',
-		lastStage: 'P3初见',
+		lastStage: 'P4初见',
 		duration: '02:30',
 		remark: '',
 	},
@@ -118,7 +118,7 @@ export let calendarData: CalendarData[] = [
 		date: '2023-05-09',
 		lastStage: 'P5二运',
 		duration: '01:30',
-		remark: '',
+		remark: '更新游戏，少打1小时',
 	},
 ]
 
