@@ -17,6 +17,7 @@
 				"src/*"
 			]
 		},
+		"types": ["@dcloudio/types"],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
