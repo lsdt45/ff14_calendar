@@ -6,9 +6,9 @@
 	
 	let showModal = ref(false)
 	
-	const db = uniCloud.database(); //代码块为cdb
-	let data = db.collection('ff14_calendar').get()
-	console.log(data)
+	// const db = uniCloud.database(); //代码块为cdb
+	// let data = db.collection('ff14_calendar').get()
+	// console.log(data)
 </script>
 
 <template>

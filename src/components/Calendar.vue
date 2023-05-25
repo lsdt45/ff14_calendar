@@ -21,7 +21,7 @@
 	// 结束日期
 	let endDate = ref<Date>(new Date('2023-6-5'))
 	// 额外的日期
-	let extraDate = ['2023-04-07', '2023-04-21']
+	let extraDate = ['2023-04-07', '2023-04-21', '2023-05-14', '2023-05-18']
 	
 	// 判断是否为"班"
 	let activeName = computed(() => {
