@@ -5,7 +5,6 @@
 	import { NButton, NModal } from 'naive-ui'
 	
 	let showModal = ref(false)
-	
 </script>
 
 <template>

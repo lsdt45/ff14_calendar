@@ -1,6 +1,6 @@
 /** @format */
 
-type CalendarData = {
+export type CalendarData = {
 	// 开荒日期
 	date: string
 	// 最后进度
@@ -119,6 +119,72 @@ export let calendarData: CalendarData[] = [
 		lastStage: 'P5二运',
 		duration: '01:30',
 		remark: '更新游戏，少打1小时',
+	},
+	{
+		date: '2023-05-12',
+		lastStage: 'P5二运',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-13',
+		lastStage: 'P5一运',
+		duration: '01:20',
+		remark: '',
+	},
+	{
+		date: '2023-05-14',
+		lastStage: 'P5一运',
+		duration: '02:00',
+		remark: '加练',
+	},
+	{
+		date: '2023-05-16',
+		lastStage: 'P5陨石',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-17',
+		lastStage: 'P6初见',
+		duration: '02:30',
+		remark: '',
+	},
+	{
+		date: '2023-05-18',
+		lastStage: 'P5二运',
+		duration: '01:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-20',
+		lastStage: 'P5二运',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-21',
+		lastStage: 'P6 一拉线',
+		duration: '02:30',
+		remark: '',
+	},
+	{
+		date: '2023-05-22',
+		lastStage: 'P6 十字火',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-24',
+		lastStage: 'P6 十字火',
+		duration: '02:00',
+		remark: '',
+	},
+	{
+		date: '2023-05-25',
+		lastStage: 'P6 十字火后排队站',
+		duration: '02:00',
+		remark: '',
 	},
 ]
 
