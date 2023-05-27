@@ -8,11 +8,13 @@
 
 <script setup lang="ts">
 	import { NDataTable } from 'naive-ui'
-	import { columns, calendarData, calcTotalTime } from '@/data/CalendarData'
+	import { columns, calcTotalTime } from '@/data/CalendarData'
+	import type { CalendarData } from '@/data/CalendarData'
 	import type { DataTableCreateSummary } from 'naive-ui'
 
   let totalTime = ref('')
-  
+  let calendarData = ref<CalendarData[]>()
+	
 	const summary: DataTableCreateSummary = () => {
 		return {
 			date: {
@@ -24,16 +26,19 @@
 
   function getTotalTime() {
     let dateArray: string[] = []
-		calendarData.map((item) => {
+		calendarData.value && calendarData.value.map((item) => {
 			// 取出所有的date
 			dateArray.push(item.duration)
 		})
 		return calcTotalTime(dateArray)
-  }
+  }   
   
 	onMounted(() => {
-    totalTime.value = getTotalTime()
-    
+		const db = uniCloud.database();
+		db.collection('ff14_calendar').get().then(resp => {
+			calendarData.value = resp.result.data
+			totalTime.value = getTotalTime()
+		})
 	})
 </script>
 

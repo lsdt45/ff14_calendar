@@ -1,12 +1,7 @@
 {
   "name": "calendar",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite --port 8085",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
     "dev:app-ios": "uni -p app-ios",

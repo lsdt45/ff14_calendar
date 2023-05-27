@@ -1,4 +1,9 @@
 <!-- @format -->
+<template>
+	<n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+		<Main />
+	</n-config-provider>
+</template>
 
 <script setup lang="ts">
 	import Main from '@/views/Main.vue'
@@ -6,10 +11,9 @@
 	import { zhCN, dateZhCN } from 'naive-ui'
 </script>
 
-<template>
-	<n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-		<Main />
-	</n-config-provider>
-</template>
 
-<style></style>
+<style lang="scss">
+uni-page {
+	width: 60vh;
+}
+</style>

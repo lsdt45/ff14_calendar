@@ -1,6 +1,6 @@
 /** @format */
 
-type CalendarData = {
+export type CalendarData = {
 	// 开荒日期
 	date: string
 	// 最后进度
